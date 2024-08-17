@@ -1,0 +1,61 @@
+@import "../../../assets/styles/utils/variables";
+@import "../../../assets/styles/utils/mixins";
+
+.login-container {
+  @extend %flex-align_center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.login-box {
+  text-align: center;
+  padding: 1rem;
+  background-color: $light-color;
+  border-radius: 0.8rem;
+
+  .login-logo {
+    width: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: #777;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      text-align: start;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      border: 0.1rem solid #ccc;
+      border-radius: 0.4rem;
+    }
+    .btn-login {
+      width: 100%;
+      padding: 0.7rem;
+      background-color: $primary-color;
+      color: #000;
+      border: none;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      font-weight: bold;
+      box-sizing: content-box;
+    }
+  }
+  .error {
+    color: red;
+    margin: 0.5rem;
+  }
+}

@@ -1,0 +1,43 @@
+@import "../../../assets/styles/utils/variables";
+@import "../../../assets/styles/utils/mixins";
+
+.pagination {
+  @extend %flex-align_center;
+  justify-content: center;
+  margin-top: 2rem;
+
+  .page-item {
+    background-color: #ffffff;
+    border: 0.1rem solid #e0e0e0;
+    color: #333;
+    padding: 0.8rem 1.2rem;
+    margin: 0 0.4rem;
+    cursor: pointer;
+    border-radius: 0.6rem;
+    min-width: 3.2rem;
+    text-align: center;
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: $light-color;
+      border-color: $primary-color;
+    }
+
+    &.arrow {
+      font-size: 1.6rem;
+      padding: 0.8rem 1rem;
+    }
+
+    &:disabled {
+      background-color: #e9ecef;
+      border-color: #dee2e6;
+      color: #6c757d;
+      cursor: not-allowed;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div class="container">
+    <app-product-filter class="filter-item" (categorySelected)="onFilterChange($event)" />
+    <div>
+        <div class="product-container" *ngIf="products$ | async as products">
+            @for (product of products; track $index) {
+            <app-product-card class="product-item" [product]="product" (addToCart)="onAddToCart()" />
+            }
+        </div>
+        <app-paginator [totalItems]="total$ | async" [itemsPerPage]="pageSize$ | async" [currentPage]="page$ | async"
+            (pageChanged)="onPageChanged($event)" />
+    </div>
+</div>
+<ng-template #noProducts>
+    <p>No products available.</p>
+</ng-template>

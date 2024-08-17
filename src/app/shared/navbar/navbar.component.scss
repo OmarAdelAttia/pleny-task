@@ -1,0 +1,76 @@
+@import "../../../assets/styles/utils/variables";
+@import "../../../assets/styles/utils/mixins";
+
+nav {
+  @extend %flex-align_center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  background-color: #ffffff;
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+
+  .left-section {
+    @extend %flex-align_center;
+
+    .logo {
+      @extend %flex-align_center;
+
+      img {
+        width: 4rem;
+        margin-right: 1rem;
+      }
+
+      span {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #000;
+      }
+    }
+
+    .home-link {
+      margin-left: 5rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+
+  .nav-links {
+    @extend %flex-align_center;
+
+    a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .search-bar {
+      padding: 0.5rem;
+      border: 0.1rem solid #ccc;
+      border-radius: 0.4rem;
+      margin-right: 2rem;
+    }
+
+    .cart {
+      @extend %flex-align_center;
+      position: relative;
+
+      i {
+        font-size: 1.5rem;
+        color: #000;
+      }
+
+      .cart-count {
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        background-color: #f00;
+        color: #fff;
+        border-radius: 50%;
+        padding: 0.2rem 0.4rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

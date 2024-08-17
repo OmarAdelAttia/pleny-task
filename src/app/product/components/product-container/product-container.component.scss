@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .filter-item {
+    width: 20%;
+  }
+
+  .product-item {
+    width: calc(30% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 1300px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media (max-width: 768px) {
+    .product-item {
+      width: calc(50% - 20px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product-item {
+      width: calc(100% - 20px);
+    }
+  }
+}

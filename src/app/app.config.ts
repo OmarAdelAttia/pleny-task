@@ -5,25 +5,30 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideStoreDevtools } from "@ngrx/store-devtools";
+import { authReducer } from './auth/store/auth.reducer';
+import { productReducer } from './product/store/product.reducer';
+import { authInterceptor } from './auth/interceptor/auth.interceptor';
+import { AuthEffects } from './auth/store/auth.effects';
+import { ProductEffects } from './product/store/product.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection(
-      {
-        eventCoalescing: true
-      }
+      { eventCoalescing: true }
     ),
     provideRouter(routes),
     provideClientHydration(),
-    provideStore(),
-    provideEffects(),
-    provideHttpClient(),
+    provideStore(
+      { auth: authReducer, products: productReducer }
+    ),
+    provideEffects([AuthEffects, ProductEffects]),
+    provideHttpClient(
+      withInterceptors([authInterceptor])
+    ),
     provideStoreDevtools(
-      {
-        maxAge: 25
-      }
+      { maxAge: 25 }
     ),
   ]
 };

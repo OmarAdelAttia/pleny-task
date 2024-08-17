@@ -1,0 +1,37 @@
+@import "../../../assets/styles/utils/variables";
+@import "../../../assets/styles/utils/mixins";
+
+.footer {
+  background-color: $dark-color;
+  color: $light-color;
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .footer-content {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-left: 2rem;
+      font-size: 0.8rem;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+
+      img {
+        max-width: 3rem;
+        min-width: 2.8rem;
+        margin-right: 1rem;
+      }
+
+      span {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

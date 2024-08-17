@@ -1,0 +1,19 @@
+<div class="pagination">
+    @if (totalPages > 1) {
+    <button class="page-item arrow" [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)"
+        type="button">{{ prev() }}</button>
+    }
+
+    @for (page of [].constructor(totalPages); track $index) {
+    <button class="page-item" [class.active]="$index + 1 === currentPage" (click)="onPageChange($index + 1)">
+        {{ $index + 1 }}
+    </button>
+    }
+
+    @if (totalPages > 1) {
+    <button class="page-item arrow" [disabled]="currentPage === totalPages" (click)="onPageChange(currentPage + 1)"
+        type="button">
+        {{ next() }}
+    </button>
+    }
+</div>

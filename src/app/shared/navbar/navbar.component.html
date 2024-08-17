@@ -1,0 +1,22 @@
+<nav>
+    <div class="left-section">
+        <div class="logo">
+            <img src="assets/imgs/logo.png" alt="ClickTik Logo" />
+            <span>ClickTik</span>
+        </div>
+        <a routerLink="/home" class="home-link">Home</a>
+    </div>
+    <div class="nav-links">
+        <!-- Authentication Check -->
+        <ng-container *ngIf="isAuthenticated$ |async; else loginLink">
+            <input type="text" placeholder="Search..." class="search-bar" (keyup)="onSearch($event)" />
+            <div class="cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">{{ cartItems }}</span>
+            </div>
+        </ng-container>
+        <ng-template #loginLink>
+            <a routerLink="/login">Log in</a>
+        </ng-template>
+    </div>
+</nav>

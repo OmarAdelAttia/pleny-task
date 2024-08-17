@@ -1,0 +1,13 @@
+<div class="filter-container">
+    <h3>Products</h3>
+    <ul class="filter-list">
+        @for (item of productCategories; track $index) {
+        <li>
+            <label>
+                <input type="radio" name="category" (change)="filter(item.value)" />
+                {{ item.title }} ({{ item.count }})
+            </label>
+        </li>
+        }
+    </ul>
+</div>
